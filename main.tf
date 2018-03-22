@@ -10,7 +10,7 @@ resource "digitalocean_droplet" "redis" {
   ssh_keys            = ["${var.ssh_fingerprints}"]
   user_data           = "${file("${path.module}/files/cloudinit.yml")}"
 
-  # Copies the redis.conf file to /etc/redis/agw_config.conf
+  # Copies the redis.conf file to /etc/redis/config.conf
   provisioner "file" {
     content     = "${var.custom_config != "" ? var.custom_config : data.template_file.redis.rendered}"
     destination = "/tmp/redis_config.conf"

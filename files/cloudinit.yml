@@ -25,9 +25,8 @@ runcmd:
   - make -C /tmp/redis
   - make -C /tmp/redis install
   - echo -n | /tmp/redis/utils/install_server.sh
-  - rm -rf /tmp/redis*
   - cp /tmp/redis_config.conf /etc/redis/6379.conf
-  - rm -rf /tmp/redis_config.conf
+  - rm -rf /tmp/redis*
   - service redis_6379 restart
 power_state:
   mode: reboot

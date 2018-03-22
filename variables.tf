@@ -30,3 +30,8 @@ variable "number_of_dbs" {
   default = "16"
   type = "string"
 }
+
+variable "custom_config" {
+  default = ""
+  type = "string"
+}

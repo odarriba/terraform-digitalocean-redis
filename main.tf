@@ -12,7 +12,7 @@ resource "digitalocean_droplet" "redis" {
 
   # Copies the redis.conf file to /etc/redis/agw_config.conf
   provisioner "file" {
-    content     = "${(var.custom_template && var.custom_template != "") ? var.custom_template : data.template_file.redis.rendered}"
+    content     = "${(var.custom_config && var.custom_config != "") ? var.custom_config : data.template_file.redis.rendered}"
     destination = "/tmp/redis_config.conf"
   }
 }

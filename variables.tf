@@ -23,6 +23,7 @@ variable "tags_allowed_to_access" {
 }
 
 variable "password" {
+  default = ""
   type = "string"
 }
 

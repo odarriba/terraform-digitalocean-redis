@@ -45,6 +45,10 @@ is our use case.
 But you can change the whole configuration file by passing it's
 content in a var called `custom_config`.
 
+Also, if you don't set the `password` varaible, the redis instance will not have
+any password, and as the secure mode is enabled, that would lead to a redis
+instance listening only to local connections.
+
 To see more configuration variables, you can take a look at `variables.tf` file.
 
 ## License
